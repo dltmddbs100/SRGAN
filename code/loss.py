@@ -1,3 +1,7 @@
+import numpy as np
+import math
+from math import log10
+
 import torch
 from torch import nn
 from torchvision.models.vgg import vgg16
@@ -44,3 +48,14 @@ class TVLoss(nn.Module):
     @staticmethod
     def tensor_size(t):
         return t.size()[1] * t.size()[2] * t.size()[3]
+    
+def psnr(label, outputs, max_val=1.):
+    label = label.cpu().detach().numpy()
+    outputs = outputs.cpu().detach().numpy()
+    img_diff = outputs - label
+    rmse = math.sqrt(np.mean((img_diff)**2))
+    if rmse == 0:
+        return 100
+    else:
+        psnr = 20 * log10(max_val/rmse)
+        return psnr
