@@ -32,7 +32,7 @@ You can find the paper review in my [post](https://deepkerry.tistory.com/20?cate
 
 ### **Results**
 
-+ Epochs의 증가에 따라 Discriminator의 loss는 감소하지않고 고정적인 모습을 보이며, Generator loss는 지속적으로 감소
++ Epochs의 증가에 따라 Discriminator의 loss는 감소하지않고 고정적인 모습, Generator loss는 지속적으로 감소
 + 동시에 testset의 psnr score가 점차 개선
 
 <img src = "https://user-images.githubusercontent.com/55730591/146666118-d3be6eca-7cfc-44f5-b388-32ef5d008725.png" width="80%" height="80%">
